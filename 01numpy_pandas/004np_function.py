@@ -33,6 +33,10 @@ print(np.isnan(arr))#返回一个布尔数组，表示数组中每个元素是�
 
 print(np.cumsum(arr))#计算数组中元素的累积和
 print(np.cumprod(arr))#计算数组中元素的累积积
+print(np.cumprod(arr, axis=0))#计算数组中元素沿着指定轴的累积积按照行的方向
+print(np.cumprod(arr, axis=1))#计算数组中元素沿着指定轴的累积积按照列的方向
+print(np.cumsum(arr, axis=0))#计算数组中元素沿着指定轴的累积和按照行的方向
+print(np.cumsum(arr, axis=1))#计算数组中元素沿着指定轴的累积和按照列的方向
 
 print(np.diff(arr))#计算数组中元素的离散差分
 print(np.gradient(arr))#计算数组中元素的梯度
@@ -81,4 +85,16 @@ print(np.random.seed(0))#设置随机数种子，使得每次生成的随机数�
 print(np.multiply(arr, arr))#计算数组中每个元素的乘积
 print(np.divide(arr, arr))#计算数组中每个元素的商
 print(np.add(arr, arr))#计算数组中每个元素的和
-print(np.subtract(arr, arr))#计算数组中每个元素的差 
+print(np.subtract(arr, arr))#计算数组中每个元素的差 ls
+
+
+
+print(np.any(arr > 0))#检查数组中是否有任何元素满足条件
+print(np.all(arr > 0))#检查数组中是否所有元素都满足条件
+
+
+print(np.isclose(arr, arr.T))#检查数组中每个元素是否与其转置的对应元素近似相等
+print(np.isclose(arr, arr.T, atol=1e-5))#检查数组中每个元素是否与其转置的对应元素近似相等，允许一定的绝对误差
+print(np.isclose(arr, arr.T, rtol=1e-5))#检查数组中每个元素是否与其转置的对应元素近似相等，允许一定的相对误差
+
+print(arr @ arr.T)#计算数组与其转置的矩阵乘积
