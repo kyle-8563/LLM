@@ -1,3 +1,4 @@
+#对pd进行修改
 import pandas as pd
 df = pd.DataFrame({"age": [20, 30, 40, 10], "name": ["张三", "李四", "王五", "赵六"], "id": [101, 102, 103, 104]})
 print(df)
@@ -19,3 +20,20 @@ print(df)
 # 指定行做索引
 df.set_index("id",inplace=True)
 print(df)
+
+df.reset_index#进行索引重置
+print(df)
+
+df.columns = ["年龄","名称"]
+print(df)
+#删除列
+df.drop(columns=["年龄"],inplace = True)
+print(df)
+#插入列
+df.insert(0,"age",df["名称"])
+print(df)
+#删除列
+del df["age"]
+print(df)
+
+
